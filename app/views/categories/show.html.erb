@@ -1,0 +1,15 @@
+
+<br>
+
+  <h1><%= @category.name %></h1>
+
+<br>
+
+<h2>Categories#show</h2>
+<p>Find me in app/views/categories/show.html.erb</p>
+
+<ul>
+  <% @category.products.each do |product| %>
+    <li><%= link_to "#{product.name}", category_product_path(@category, product) %></li>
+  <% end %>
+</ul>
