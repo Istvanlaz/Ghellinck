@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'about_me', to: 'pages#about_me', as: 'about_me'
   get 'contact', to: 'pages#contact', as: 'contact'
 
-  resources :categories, only: [:index, :show, :new, :edit, :destroy] do
-    resources :products, only: [:index, :show, :destroy]
+  resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    resources :products, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end
 
   devise_for :users

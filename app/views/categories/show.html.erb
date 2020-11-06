@@ -5,11 +5,22 @@
 
 <br>
 
-<h2>Categories#show</h2>
-<p>Find me in app/views/categories/show.html.erb</p>
+<br>
+
+<% unless !@category.image.attached? %>
+  <div class="product_img">
+    <%= cl_image_tag @category.image.key %>
+  </div>
+<% end %>
 
 <ul>
   <% @category.products.each do |product| %>
     <li><%= link_to "#{product.name}", category_product_path(@category, product) %></li>
   <% end %>
+  <li><%= link_to "Create a new Product", new_category_product_path(@category) %></li>
+  <!-- <li><%#= link_to "Create a new Product", new_category_product_path, class: 'btn-details2' %></li> -->
 </ul>
+
+<p class="btn"><%= link_to "Edit #{@category.name}", edit_category_path(@category) %></p><br>
+<p class="btn"><%= link_to "Delete Category", category_path(@category), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@category.name}?" } } %></p>
+
