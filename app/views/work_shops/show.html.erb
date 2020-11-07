@@ -11,16 +11,16 @@
 <div class="admin_product_list">
   <ul>
     <% @category.products.each do |product| %>
-      <li class="admin_category_item">
+      <li class="admin_list_item">
         <%= link_to my_admin_product_show_path(@category, product) do %>
           <div class="admin_product_card">
-            <div class="admin_category_name">
+            <div class="admin_list_item_name">
               <%= product.name %>
             </div>
             <div class="admin_product_img">
               <%= cl_image_tag product.image.key %>
             </div>
-            <div class="admin_bg_dark_product"></div>
+            <div class="admin_product_bg_dark"></div>
           </div>
         <% end %>
         <div class="admin_control_panel">

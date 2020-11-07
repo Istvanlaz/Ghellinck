@@ -6,16 +6,16 @@
 <div class="admin_category_list">
   <ul>
     <% @categories.each do |category| %>
-        <li class="admin_category_item">
+        <li class="admin_list_item">
           <%= link_to my_admin_show_path(category.id) do %>
             <div class="admin_category_card">
-              <div class="admin_category_name">
+              <div class="admin_list_item_name">
                 <%= category.name %>
               </div>
               <div class="admin_category_img">
                 <%= cl_image_tag category.image.key %>
               </div>
-              <div class="admin_bg_dark"></div>
+              <div class="admin_category_bg_dark"></div>
             </div>
           <% end %>
           <div class="admin_control_panel">

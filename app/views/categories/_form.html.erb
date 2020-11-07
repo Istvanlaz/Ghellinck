@@ -1,10 +1,10 @@
-<div class="admin_category_form">
+<div class="admin_form_category">
   <%= simple_form_for [category] do |f| %>
     <%= f.input :name %>
     <%= f.input :image, as: :file %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
-  <div class="back_btn_admin_form">
+  <div class="admin_form_back_btn">
     <%= link_to "Back", :back %>
   </div>
 </div>
