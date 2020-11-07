@@ -11,7 +11,7 @@
 
 <div class="admin_product_show">
   <% unless !@product.image.attached? %>
-    <div class="product_img">
+    <div class="admin_product_show_img">
       <%= cl_image_tag @product.image.key %>
     </div>
   <% end %>

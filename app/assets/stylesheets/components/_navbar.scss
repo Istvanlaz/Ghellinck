@@ -178,6 +178,21 @@
   .nav-active {
     transform: translateX(0vw);
   }
+
+  .bg_darkener {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: $black35;
+
+    z-index: 19999;
+  }
 }
 
 
@@ -203,6 +218,7 @@
 .burger_animation .line3 {
   transform: rotate(45deg) translate(-5px,-5px);
 }
+
 
 
 

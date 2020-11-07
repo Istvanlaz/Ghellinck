@@ -15,8 +15,6 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
-
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -25,6 +23,8 @@ console.log('Hello World from Webpacker')
 
 // External imports
 import "bootstrap";
+
+import "controllers";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
