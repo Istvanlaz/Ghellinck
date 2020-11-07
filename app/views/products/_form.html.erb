@@ -1,7 +1,11 @@
-<%= simple_form_for [category, product] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :image, as: :file %>
-  <%#= f.input :image_cache, as: :hidden %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="admin_category_form">
+  <%= simple_form_for [category, product] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :image, as: :file %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+  <div class="back_btn_admin_form">
+    <%= link_to "Back", :back %>
+  </div>
+</div>

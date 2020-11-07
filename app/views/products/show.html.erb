@@ -14,8 +14,3 @@
   </div>
 <% end %>
 
-<br>
-
-<p class="btn"><%= link_to "Edit #{@product.name}", edit_category_product_path(@category, @product) %></p><br>
-<p class="btn"><%= link_to "Delete Product", category_product_path(@product.category, @product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %></p>
-

@@ -1,6 +1,5 @@
 class CategoriesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [ :index, :show ]
-  skip_before_action :authenticate_user!, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     @categories = Category.all
@@ -17,7 +16,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save!
-      redirect_to category_path(@category.id), notice: "#{@category.name} was correctly saved."
+      redirect_to my_admin_show_path(@category), notice: "La catégorie '#{@category.name}' a bien été créée."
     else
       render :new
     end
@@ -30,7 +29,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update(category_params)
-      redirect_to categories_path
+      redirect_to my_admin_space_path, notice: "Les détails de la catégorie '#{@product.name}' ont été modifiés correctement."
     else
       render :new
     end
@@ -39,7 +38,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    redirect_to categories_path
+    redirect_to my_admin_space_path, notice: "La catégorie '#{@product.name}' a bien été supprimée."
   end
 
   private

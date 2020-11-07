@@ -1,0 +1,38 @@
+<div class="admin_space_title">
+  <h1>Bienvenue dans ton admin space</h1>
+  <p>Voici les catégories que vous avez déjà créées</p>
+</div>
+
+<div class="admin_category_list">
+  <ul>
+    <% @categories.each do |category| %>
+        <li class="admin_category_item">
+          <%= link_to my_admin_show_path(category.id) do %>
+            <div class="admin_category_card">
+              <div class="admin_category_name">
+                <%= category.name %>
+              </div>
+              <div class="admin_category_img">
+                <%= cl_image_tag category.image.key %>
+              </div>
+              <div class="admin_bg_dark"></div>
+            </div>
+          <% end %>
+          <div class="admin_control_panel">
+            <%= link_to edit_category_path(category) do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+            <%= link_to category_path(category), { method: :delete, data: { confirm: "Êtes vous sûr de vouloir supprimer: #{category.name}?" } } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
+        </li>
+    <% end %>
+  </ul>
+
+  <div class="admin_create_btn">
+    <%= link_to new_category_path do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+  </div>
+</div>

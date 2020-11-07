@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [ :index, :show ]
-  skip_before_action :authenticate_user!, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: [ :show ]
 
   def index
     @products = Product.all
@@ -20,7 +19,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.category = set_category
     if @product.save!
-      redirect_to category_product_path(@category.id, @product.id), notice: "#{@product.name} was correctly saved."
+      redirect_to my_admin_product_show_path(@category, @product), notice: "Le produit '#{@product.name}' a bien été créé."
     else
       render :new
     end
@@ -33,7 +32,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to categories_path
+      redirect_to my_admin_product_show_path(@product.category, @product), notice: "Les détails du produit '#{@product.name}' ont été modifiés correctement."
     else
       render :new
     end
@@ -42,7 +41,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to categories_path
+    redirect_to my_admin_show_path(@product.category), notice: "Le produit '#{@product.name}' a bien été supprimé."
   end
 
   private

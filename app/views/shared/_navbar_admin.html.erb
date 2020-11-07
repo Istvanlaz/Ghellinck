@@ -1,0 +1,24 @@
+<div class="navbar_portfolio">
+
+  <ul class="navbar-links">
+    <li class="navbar-item" id="name">
+      <%= link_to "My Work Space", my_admin_space_path %>
+    </li>
+    <li class="navbar-item" id="empty_space">
+
+    </li>
+    <li class="navbar-item">
+      <%= link_to "Change admin settings", edit_user_registration_path %>
+    </li>
+    <li class="navbar-item">
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    </li>
+  </ul>
+  <div class="logo"><%= link_to "My Work Space", my_admin_space_path %></div>
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+
+</div>

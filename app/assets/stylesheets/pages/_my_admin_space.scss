@@ -1,0 +1,303 @@
+.admin_space_title {
+  position: relative;
+
+  width: 100vw;
+
+  color: $black;
+
+  padding: 3vh 0 0 0;
+  text-align: center;
+}
+
+.admin_back_btn {
+  position: absolute;
+  top: 4vh;
+  left: 6vh;
+
+  font-size: 2em;
+}
+
+.admin_back_btn a {
+  color: $darkBlue;
+  &:hover {
+    color: $goldWriting;
+  }
+}
+
+.admin_category_list {
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+}
+
+.admin_category_list ul {
+  list-style: none;
+}
+
+.admin_create_btn {
+  position: absolute;
+  top: 4vh;
+  right: 4vh;
+  font-size: 2.3em;
+}
+
+.admin_create_btn a {
+  color: $darkRed;
+  &:hover{
+    color: $goldWriting;
+  }
+}
+
+.admin_category_item {
+  display: flex;
+  align-items: center;
+  &:hover.admin_category_name {
+    color: $black;
+  }
+}
+
+.admin_category_item a {
+  margin: 2vh;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.admin_category_card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: 20vh;
+  width: 35vw;
+
+  color: $bright;
+  padding-right: 5vw;
+  padding-left: 5vw;
+
+  border-radius: 25px;
+
+  &:hover {
+    box-shadow: 2px 0px 7px $black15;
+  }
+
+  &:hover .admin_bg_dark {
+    display: block;
+  }
+}
+
+.admin_category_name {
+  font-weight: bold;
+  text-shadow: 0px 4px 4px $black25;
+  z-index: 2;
+}
+
+.admin_category_img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  object-fit: cover;
+
+  height: 20vh;
+  width: 35vw;
+
+  border-radius: 25px;
+}
+
+.admin_bg_dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  height: 20vh;
+  width: 35vw;
+
+  background-color: $black45;
+
+  border-radius: 25px;
+}
+
+.admin_control_panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  height: 20vh;
+}
+
+.admin_control_panel a {
+  color: $black;
+  &:hover {
+    color: $goldWriting;
+  }
+}
+
+.admin_product_list {
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+}
+
+.admin_product_list ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+
+  margin-right: 10vw;
+  margin-top: 4vh;
+
+  list-style: none;
+}
+
+.admin_product_card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: 30vh;
+  width: 30vh;
+
+  color: $bright;
+  padding-right: 2vw;
+  padding-left: 2vw;
+
+  border-radius: 25px;
+
+  &:hover {
+    box-shadow: 2px 0px 7px $black15;
+  }
+
+  &:hover .admin_bg_dark_product {
+    display: block;
+  }
+}
+
+.admin_product_img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  object-fit: cover;
+
+  height: 30vh;
+  width: 30vh;
+
+  border-radius: 25px;
+}
+
+.admin_bg_dark_product {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  height: 30vh;
+  width: 30vh;
+
+  background-color: $black45;
+
+  border-radius: 25px;
+}
+
+.admin_product_show {
+  position: relative;
+
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100vw;
+  height: 74vh;
+
+  padding-left: 5vw;
+}
+
+.admin_product_show_btns {
+  position: absolute;
+  top: 2vh;
+  right: 4vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 8vh;
+  width: 12vw;
+
+  font-size: 1.5em;
+}
+
+.admin_product_show_btns a {
+  color: $black;
+  &:hover {
+    color: $goldWriting;
+  }
+}
+
+.admin_product_descritpion ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  height: 40vh;
+
+  list-style: none;
+}
+
+#product_show_title {
+  height: 16vh;
+}
+
+.admin_category_form {
+  padding: 10vh 10vw;
+  width: 80vw;
+}
+
+.back_btn_admin_form {
+  margin-top: 1em;
+}
+
+.back_btn_admin_form a {
+  color: $darkBlue;
+  font-weight: bold;
+  &:hover {
+    color: $goldWriting;
+    text-decoration: none;
+  }
+}
+
+.admin_form_submit {
+  border: solid 1px $darkBlue;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.admin_forgot_pwd {
+  margin: 2vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
