@@ -1,0 +1,38 @@
+
+<div class="admin_space_title" id="product_show_title">
+  <h1><%= @product.name %></h1>
+  <p>Voici un aperçu de toutes les informations qui seront affichées pour <%= @product.name %>.</p>
+  <div class="admin_back_btn">
+    <%= link_to my_admin_show_path(@category) do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="admin_product_show">
+  <% unless !@product.image.attached? %>
+    <div class="admin_product_show_img">
+      <%= cl_image_tag @product.image.key %>
+    </div>
+  <% end %>
+
+  <div class="admin_product_show_descritpion">
+    <ul>
+      <li><strong><em>Nom:</em></strong> <%= @product.name %></li>
+      <li><strong><em>Description:</em></strong><br><%= @product.description %></li>
+      <li><strong><em>Catégorie:</em></strong> <%= @category.name %></li>
+    </ul>
+  </div>
+
+  <div class="admin_product_show_btns">
+    <%= link_to edit_category_product_path(@category, @product) do %>
+      <i class="far fa-edit"></i>
+    <% end %>
+    <%= link_to category_product_path(@product.category, @product), { method: :delete, data: { confirm: "Êtes vous sûr de vouloir supprimer: #{@product.name}?" } } do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
+  </div>
+</div>
+
+
+

@@ -7,3 +7,10 @@
   <li>Present in category: <%= @category.name %></li>
 </ul>
 
+<br>
+<% unless !@product.image.attached? %>
+  <div class="product_img">
+    <%= cl_image_tag @product.image.key %>
+  </div>
+<% end %>
+

@@ -8,6 +8,7 @@
 
 puts 'Cleaning database...'
 
+User.destroy_all
 Category.destroy_all
 Product.destroy_all
 
@@ -26,7 +27,7 @@ category_2 = Category.new( {
 category_2.save!
 
 category_3 = Category.new( {
-  name: "Dessins Peinture"
+  name: "Dessins Peintures"
 })
 category_3.save!
 

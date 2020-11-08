@@ -5,11 +5,18 @@
 
 <br>
 
-<h2>Categories#show</h2>
-<p>Find me in app/views/categories/show.html.erb</p>
+<br>
+
+<% unless !@category.image.attached? %>
+  <div class="product_img">
+    <%= cl_image_tag @category.image.key %>
+  </div>
+<% end %>
 
 <ul>
   <% @category.products.each do |product| %>
     <li><%= link_to "#{product.name}", category_product_path(@category, product) %></li>
   <% end %>
 </ul>
+
+

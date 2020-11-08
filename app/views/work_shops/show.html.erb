@@ -1,0 +1,43 @@
+<div class="admin_space_title">
+  <h1><%= @category.name %></h1>
+  <p>Créez, modifiez ou visualisez les spécificités de vos produits ici.</p>
+  <div class="admin_back_btn">
+    <%= link_to my_admin_space_path do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="admin_product_list">
+  <ul>
+    <% @category.products.each do |product| %>
+      <li class="admin_list_item">
+        <%= link_to my_admin_product_show_path(@category, product) do %>
+          <div class="admin_product_card">
+            <div class="admin_list_item_name">
+              <%= product.name %>
+            </div>
+            <div class="admin_product_img">
+              <%= cl_image_tag product.image.key %>
+            </div>
+            <div class="admin_product_bg_dark"></div>
+          </div>
+        <% end %>
+        <div class="admin_control_panel">
+          <%= link_to edit_category_product_path(@category, product) do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to category_product_path(@category, product), { method: :delete, data: { confirm: "Êtes vous sûr de vouloir supprimer: #{product.name}?" } } do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="admin_create_btn">
+    <%= link_to new_category_product_path(@category) do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+  </div>
+</div>
