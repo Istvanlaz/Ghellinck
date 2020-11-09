@@ -4,11 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  def user_count
+  validate :max_user_count, on: :create
+
+  def max_user_count
     if User.count === 1
-      return true
-    else
-      return false
+      errors.add(:user, 'Reached limit of permitted users for this app.')
+      false
     end
   end
 end
