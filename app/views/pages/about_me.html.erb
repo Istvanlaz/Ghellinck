@@ -1,5 +1,6 @@
 <div class="about_cont">
-  <div class="fakeimage">
+  <div class="user_image">
+    <%= cl_image_tag User.last.image.key %>
   </div>
-  <div class="fake_descr">Hello World, this is a really nice view that has been set up by Istvan Lazar in order to lay the grounds for building up the user description part. Hello World, this is a really nice view that has been set up by Istvan Lazar in order to lay the grounds for building up the user description part.</div>
+  <div class="user_description"><%= User.last.description %></div>
 </div>
