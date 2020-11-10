@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update(category_params)
-      redirect_to my_admin_space_path, notice: "Les détails de la catégorie '#{@product.name}' ont été modifiés correctement."
+      redirect_to my_admin_space_path, notice: "Les détails de la catégorie '#{@category.name}' ont été modifiés correctement."
     else
       render :new
     end
@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    redirect_to my_admin_space_path, notice: "La catégorie '#{@product.name}' a bien été supprimée."
+    redirect_to my_admin_space_path, notice: "La catégorie '#{@category.name}' a bien été supprimée."
   end
 
   private

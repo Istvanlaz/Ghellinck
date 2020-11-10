@@ -17,6 +17,12 @@
   z-index: 20002;
 }
 
+.blanc_nav_space {
+  width: 100vw;
+  height: 10vh;
+  background-color: transparent;
+}
+
 .solid_navbar {
   background-color: $black45 !important;
   transition: background-color 1s ease 0s;
