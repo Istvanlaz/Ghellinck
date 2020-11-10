@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one_attached :image
 
+  has_one_attached :home_image
+
   # validates :description, presence: true
 
   validate :max_user_count, on: :create

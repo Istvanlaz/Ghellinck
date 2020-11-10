@@ -1,7 +1,61 @@
 <div class="home_cont">
-  <div class="fakeimage" id="fi1"></div>
-  <div class="right_hand_bitch">
-    <div class="fakeimage" id="fi2"></div>
-    <div class="fake_descr" id="fd1">Hello World, this is a really nice view that has been set up by Istvan Lazar in order to lay the grounds for building up the user description part. Hello World, this is a really nice view that has been set up by Istvan Lazar in order to lay the grounds for building up the user description part.</div>
+
+  <div class="image_slider">
+
+    <div class="slides">
+
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+      <input type="radio" name="radio-btn" id="radio5">
+
+      <% product_array = [] %>
+      <% finding_products = Product.all.sample(5) %>
+      <% finding_products.each do |product| %>
+        <% product_array << product %>
+      <% end %>
+      <div class="slide active_image">
+        <%= cl_image_tag product_array[0].image.key %>
+      </div>
+      <div class="slide">
+        <%= cl_image_tag product_array[1].image.key %>
+      </div>
+      <div class="slide">
+        <%= cl_image_tag product_array[2].image.key %>
+      </div>
+      <div class="slide">
+        <%= cl_image_tag product_array[3].image.key %>
+      </div>
+      <div class="slide">
+        <%= cl_image_tag product_array[4].image.key %>
+      </div>
+
+      <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+        <div class="auto-btn5"></div>
+      </div>
+
+    </div>
+
+    <div class="navigation-manual">
+      <label for="radio1" id="man_rad1" class="manual-btn"></label>
+      <label for="radio2" id="man_rad2" class="manual-btn"></label>
+      <label for="radio3" id="man_rad3" class="manual-btn"></label>
+      <label for="radio4" id="man_rad4" class="manual-btn"></label>
+      <label for="radio5" id="man_rad5" class="manual-btn"></label>
+    </div>
+
+  </div>
+
+
+  <div class="home_info_corner">
+    <div class="home_user_image">
+      <%= cl_image_tag User.last.home_image.key %>
+    </div>
+    <div class="home_user_description"><%= User.last.home_description %></div>
   </div>
 </div>
