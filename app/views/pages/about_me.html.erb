@@ -1,2 +1,6 @@
-<h1>Pages#about_me</h1>
-<p>Find me in app/views/pages/about_me.html.erb</p>
+<div class="about_cont">
+  <div class="about_user_image">
+    <%= cl_image_tag User.last.image.key %>
+  </div>
+  <div class="about_user_description"><%= User.last.description %></div>
+</div>

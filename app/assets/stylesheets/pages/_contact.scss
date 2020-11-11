@@ -1,0 +1,33 @@
+.contact_cont {
+  height: 90vh;
+  width: 100vw;
+
+  background-color: $darkBlue;
+  color: $bright;
+
+  font-family: 'Calligraffitti', cursive;
+
+  font-size: 1.5rem;
+}
+
+.contact_cont a {
+  color: $bright;
+
+  text-decoration: none;
+}
+
+.contact_cont ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: 100%;
+
+  list-style: none;
+
+  margin-bottom: 0;
+
+  padding-left: 0;
+}
+

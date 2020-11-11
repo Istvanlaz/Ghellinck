@@ -11,10 +11,16 @@
   width: 100vw;
 
   background-color: $darkBlue;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 0;
 
   z-index: 20002;
+}
+
+.blanc_nav_space {
+  width: 100vw;
+  height: 10vh;
+  background-color: transparent;
 }
 
 .solid_navbar {
@@ -48,6 +54,35 @@
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  object-fit: cover;
+
+  height: 8vh;
+  width: 8vh;
+  margin-right: 2vw;
+}
+
+#logo_name {
+  font-family: 'Calligraffitti', cursive;
+}
+
+#logo_name a {
+  font-size: 1.05rem;
+
+  padding: 0 4vw 1.5vh 0;
+
+  border-bottom: 1px solid $goldWriting;
+
+  &:hover {
+    border-bottom: 1px solid $bright;
+  }
 }
 
 #empty_space {
@@ -144,9 +179,12 @@
     opacity: 0;
   }
 
-  #name {
+  #logo {
     display: none;
-    text-shadow: 1px 1px 1px $black35;
+  }
+
+  #logo_name {
+    display: none;
   }
 
   #empty_space {

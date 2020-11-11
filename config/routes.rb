@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'realisations', to: 'pages#realisations', as: 'realisations'
+  # get 'realisations', to: 'pages#realisations', as: 'realisations'
   get 'about_me', to: 'pages#about_me', as: 'about_me'
   get 'contact', to: 'pages#contact', as: 'contact'
 
@@ -16,6 +16,6 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  root to: 'categories#index'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

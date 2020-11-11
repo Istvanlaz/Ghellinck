@@ -1,0 +1,71 @@
+
+.about_cont {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  height: 90vh;
+  width: 100vw;
+
+  background-color: $darkBlue;
+  color: $bright;
+
+  padding: 0 7vh;
+}
+
+.about_user_image {
+  height: 70vh;
+  width: 30vw;
+
+  margin: auto;
+}
+
+.about_user_image img {
+  object-fit: cover;
+  height: 70vh;
+  width: 30vw;
+
+  margin: auto;
+}
+
+.about_user_description {
+  margin: auto;
+  padding: 7vh;
+}
+
+@media screen and (max-width: 600px) {
+  .about_cont {
+    grid-template-columns: 1fr;
+
+    height: fit-content;
+
+    padding: 7vh;
+  }
+
+  .about_user_image {
+    height: 40vh;
+    width: 50vw;
+  }
+
+  .about_user_image img {
+    height: 40vh;
+    width: 50vw;
+  }
+
+  .about_user_description {
+    padding: 7vh 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

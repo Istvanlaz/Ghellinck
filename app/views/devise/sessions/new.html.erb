@@ -20,10 +20,6 @@
       </div>
     <% end %>
 
-    <!-- <div class="admin_form_forgot_pwd">
-      <%#= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-    </div> -->
-
   <% elsif User.count > 1 %>
 
     <br>
@@ -49,6 +45,17 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
+        <%= f.input :description, as: :text,
+                    required: true %>
+        <%= f.input :image, as: :file,
+                    required: true %>
+
+        <div class="line_break"></div>
+        <h3 class="form_secondary_title">Info page d'accueil.</h3>
+        <%= f.input :home_description, as: :text,
+                    required: true %>
+        <%= f.input :home_image, as: :file,
+                    required: true %>
       </div>
 
       <div class="form-actions admin_form_submit">
