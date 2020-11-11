@@ -2,6 +2,7 @@
 
 .body_cont {
   position: relative;
+  font-family: 'Roboto', sans-serif;
 }
 
 // Form Scss
@@ -196,6 +197,61 @@
 
 #radio5:checked ~ .navigation-auto .auto-btn5 {
   background-color: $bright;
+}
+
+
+@media screen and (max-width: 600px) {
+  .home_cont {
+    display: flex;
+    flex-direction: column-reverse;
+
+    height: fit-content;
+
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .home_user_image {
+    height: 40vh;
+    width: 50vw;
+  }
+
+  .home_user_image img {
+    height: 40vh;
+    width: 50vw;
+  }
+
+  .image_slider {
+    height: 80vw;
+    width: 80vw;
+  }
+
+  .slides {
+    height: 80vw;
+  }
+
+  .slide img {
+    height: 80vw;
+    width: 80vw;
+  }
+
+  .navigation-auto {
+    width: 80vw;
+    margin-top: 70vw;
+  }
+
+  .navigation-manual {
+    width: 80vw;
+    margin-top: -10vw;
+  }
+
+  .manual-btn:not(:last-child) {
+    margin-right: 10vw;
+  }
+
+  .navigation-auto div:not(:last-child) {
+    margin-right: 10vw;
+  }
 }
 
 

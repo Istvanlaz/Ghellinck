@@ -32,3 +32,40 @@
   padding: 7vh;
 }
 
+@media screen and (max-width: 600px) {
+  .about_cont {
+    grid-template-columns: 1fr;
+
+    height: fit-content;
+
+    padding: 7vh;
+  }
+
+  .about_user_image {
+    height: 40vh;
+    width: 50vw;
+  }
+
+  .about_user_image img {
+    height: 40vh;
+    width: 50vw;
+  }
+
+  .about_user_description {
+    padding: 7vh 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
