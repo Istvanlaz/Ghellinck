@@ -1,22 +1,66 @@
 
-<br>
-
+<div class="admin_space_title">
   <h1><%= @category.name %></h1>
+</div>
 
-<br>
 
-<br>
+<!-- <div class="product_grid_cont">
 
-<% unless !@category.image.attached? %>
-  <div class="product_img">
-    <%= cl_image_tag @category.image.key %>
+    <div class="products-grid">
+      <%# @category.products.each do |product| %>
+        <div class="product_linker">
+          <div class="product_img">
+            <%#= cl_image_tag product.image.key %>
+          </div>
+          <%#= link_to category_product_path(@category, product) do %>
+            <div class="product_card">
+              <div class="hover_dark"></div>
+              <div class="info_card">
+                <div>
+                  <%#= product.name %>
+                </div>
+                <div>
+                  <%#= product.description %>€
+                </div>
+              </div>
+            </div>
+          <%# end %>
+          <div class="hover_links">
+            <div class="links_product">
+              <%#= link_to '#' do %>
+                <i class="link_svg"><%#= show_svg('icons/supermarket.svg') %></i>
+              <%# end %>
+              <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+          </div>
+        </div>
+      <%# end %>
+    </div>
   </div>
-<% end %>
+ -->
+<div class="product_show_cont">
 
-<ul>
-  <% @category.products.each do |product| %>
-    <li><%= link_to "#{product.name}", category_product_path(@category, product) %></li>
-  <% end %>
-</ul>
+  <div class="product_grid">
 
+    <% @category.products.each do |product| %>
+      <%= link_to category_product_path(@category, product) do %>
+        <div class="product_card">
+          <div class="product_show_img">
+            <%= cl_image_tag product.image.key %>
+            <div class="hover_dark"></div>
+            <div class="hover_txt">
+              <div class="hover_info">
+                <%= product.name %>
+              </div>
+              <div class="hover_info">
+                <%= product.description %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
 
+  </div>
+
+</div>
