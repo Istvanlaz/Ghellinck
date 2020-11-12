@@ -1,6 +1,10 @@
 <div class="about_cont">
-  <div class="about_user_image">
-    <%= cl_image_tag User.last.image.key %>
-  </div>
-  <div class="about_user_description"><%= simple_format(User.last.description) %></div>
+  <% if User.count === 1 %>
+
+    <div class="about_user_image">
+      <%= cl_image_tag User.last.image.key %>
+    </div>
+    <div class="about_user_description"><%= simple_format(User.last.description) %></div>
+
+  <% end %>
 </div>

@@ -10,26 +10,38 @@
       <input type="radio" name="radio-btn" id="radio4">
       <input type="radio" name="radio-btn" id="radio5">
 
-      <% product_array = [] %>
-      <% finding_products = Product.all.sample(5) %>
-      <% finding_products.each do |product| %>
-        <% product_array << product %>
+      <% if Product.count >= 5 %>
+
+        <% product_array = [] %>
+        <% finding_products = Product.all.sample(5) %>
+        <% finding_products.each do |product| %>
+          <% product_array << product %>
+        <% end %>
+        <div class="slide active_image">
+          <%= cl_image_tag product_array[0].image.key %>
+        </div>
+        <div class="slide">
+          <%= cl_image_tag product_array[1].image.key %>
+        </div>
+        <div class="slide">
+          <%= cl_image_tag product_array[2].image.key %>
+        </div>
+        <div class="slide">
+          <%= cl_image_tag product_array[3].image.key %>
+        </div>
+        <div class="slide">
+          <%= cl_image_tag product_array[4].image.key %>
+        </div>
+
+      <% else %>
+
+        <div class="slide active_image" style="background-color: black;"></div>
+        <div class="slide" style="background-color: black;"></div>
+        <div class="slide" style="background-color: black;"></div>
+        <div class="slide" style="background-color: black;"></div>
+        <div class="slide" style="background-color: black;"></div>
+
       <% end %>
-      <div class="slide active_image">
-        <%= cl_image_tag product_array[0].image.key %>
-      </div>
-      <div class="slide">
-        <%= cl_image_tag product_array[1].image.key %>
-      </div>
-      <div class="slide">
-        <%= cl_image_tag product_array[2].image.key %>
-      </div>
-      <div class="slide">
-        <%= cl_image_tag product_array[3].image.key %>
-      </div>
-      <div class="slide">
-        <%= cl_image_tag product_array[4].image.key %>
-      </div>
 
       <div class="navigation-auto">
         <div class="auto-btn1"></div>
@@ -53,9 +65,13 @@
 
 
   <div class="home_info_corner">
-    <div class="home_user_image">
-      <%= cl_image_tag User.last.home_image.key %>
-    </div>
-    <div class="home_user_description"><%= simple_format(User.last.home_description) %></div>
+    <% if User.count === 1 %>
+
+      <div class="home_user_image">
+        <%= cl_image_tag User.last.home_image.key %>
+      </div>
+      <div class="home_user_description"><%= simple_format(User.last.home_description) %></div>
+
+    <% end %>
   </div>
 </div>

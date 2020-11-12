@@ -1,23 +1,27 @@
 
 <div class="product_show_cont">
 
-  <div class="product_show_img">
-    <%= cl_image_tag @product.image.key %>
-  </div>
+  <% if Product.count >= 1 %>
 
-  <div class="product_show_info">
-
-    <div class="product_show_title">
-      <h1><%= @product.name %></h1>
+    <div class="product_show_img">
+      <%= cl_image_tag @product.image.key %>
     </div>
 
-    <div class="product_show_details">
-      <p>
-        <strong><em>Description:</em></strong><br>
-        <%= simple_format(@product.description) %>
-      </p>
+    <div class="product_show_info">
+
+      <div class="product_show_title">
+        <h1><%= @product.name %></h1>
+      </div>
+
+      <div class="product_show_details">
+        <p>
+          <strong><em>Description:</em></strong><br>
+          <%= simple_format(@product.description) %>
+        </p>
+      </div>
+
     </div>
 
-  </div>
+  <% end %>
 
 </div>
