@@ -1,4 +1,4 @@
-.product_show_cont {
+.category_show_cont {
   position: relative;
 
   height: -webkit-fit-content;
@@ -39,7 +39,7 @@
   text-decoration: none;
 }
 
-.product_show_img {
+.category_show_img {
   position: relative;
 
   display: inline-block;
@@ -49,7 +49,7 @@
   margin: 0 0 1em;
 }
 
-.product_show_img img {
+.category_show_img img {
   object-fit: cover;
 
   width: 100%;

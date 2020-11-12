@@ -1,16 +1,23 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
 
-<ul>
-  <li>Product name: <%= @product.name %></li>
-  <li>Product description: <%= @product.description %></li>
-  <li>Present in category: <%= @category.name %></li>
-</ul>
+<div class="product_show_cont">
 
-<br>
-<% unless !@product.image.attached? %>
-  <div class="product_img">
+  <div class="product_show_img">
     <%= cl_image_tag @product.image.key %>
   </div>
-<% end %>
 
+  <div class="product_show_info">
+
+    <div class="product_show_title">
+      <h1><%= @product.name %></h1>
+    </div>
+
+    <div class="product_show_details">
+      <p>
+        <strong><em>Description:</em></strong><br>
+        <%= @product.description %>
+      </p>
+    </div>
+
+  </div>
+
+</div>

@@ -3,49 +3,14 @@
   <h1><%= @category.name %></h1>
 </div>
 
-
-<!-- <div class="product_grid_cont">
-
-    <div class="products-grid">
-      <%# @category.products.each do |product| %>
-        <div class="product_linker">
-          <div class="product_img">
-            <%#= cl_image_tag product.image.key %>
-          </div>
-          <%#= link_to category_product_path(@category, product) do %>
-            <div class="product_card">
-              <div class="hover_dark"></div>
-              <div class="info_card">
-                <div>
-                  <%#= product.name %>
-                </div>
-                <div>
-                  <%#= product.description %>€
-                </div>
-              </div>
-            </div>
-          <%# end %>
-          <div class="hover_links">
-            <div class="links_product">
-              <%#= link_to '#' do %>
-                <i class="link_svg"><%#= show_svg('icons/supermarket.svg') %></i>
-              <%# end %>
-              <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            </div>
-          </div>
-        </div>
-      <%# end %>
-    </div>
-  </div>
- -->
-<div class="product_show_cont">
+<div class="category_show_cont">
 
   <div class="product_grid">
 
     <% @category.products.each do |product| %>
       <%= link_to category_product_path(@category, product) do %>
         <div class="product_card">
-          <div class="product_show_img">
+          <div class="category_show_img">
             <%= cl_image_tag product.image.key %>
             <div class="hover_dark"></div>
             <div class="hover_txt">

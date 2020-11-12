@@ -204,12 +204,17 @@
 @media screen and (max-width: 600px) {
   .home_cont {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     height: fit-content;
 
     margin: 0 auto;
     padding: 0;
+  }
+
+  .home_info_corner {
+    flex-direction: column-reverse;
+    padding: 0 0 7vh 0;
   }
 
   .home_user_image {
@@ -220,6 +225,10 @@
   .home_user_image img {
     height: 40vh;
     width: 50vw;
+  }
+
+  .home_user_description {
+    padding: 0 7vh 7vh 7vh;
   }
 
   .image_slider {
