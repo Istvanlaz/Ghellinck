@@ -7,24 +7,28 @@
 
   <div class="product_grid">
 
-    <% @category.products.each do |product| %>
-      <%= link_to category_product_path(@category, product) do %>
-        <div class="product_card">
-          <div class="category_show_img">
-            <%= cl_image_tag product.image.key %>
-            <div class="hover_dark"></div>
-            <div class="hover_txt">
-              <div class="hover_info">
-                <strong><%= product.name %></strong>
-              </div>
-              <br>
-              <div class="hover_info">
-                <%= simple_format(product.description) %>
+    <% if Product.count >= 1 %>
+
+      <% @category.products.each do |product| %>
+        <%= link_to category_product_path(@category, product) do %>
+          <div class="product_card">
+            <div class="category_show_img">
+              <%= cl_image_tag product.image.key %>
+              <div class="hover_dark"></div>
+              <div class="hover_txt">
+                <div class="hover_info">
+                  <strong><%= product.name %></strong>
+                </div>
+                <br>
+                <div class="hover_info">
+                  <%= simple_format(product.description) %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
+
     <% end %>
 
   </div>
