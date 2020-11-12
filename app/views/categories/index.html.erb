@@ -1,7 +1,7 @@
 <div class="categories_cont">
   <ul class="category_imgs">
     <% @categories.each do |category| %>
-      <li class="category_bg_img current_slide">
+      <li class="category_bg_img">
         <%= cl_image_tag category.image.key %>
       </li>
     <% end %>

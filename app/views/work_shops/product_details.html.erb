@@ -19,7 +19,7 @@
   <div class="admin_product_show_descritpion">
     <ul>
       <li><strong><em>Nom:</em></strong> <%= @product.name %></li>
-      <li><strong><em>Description:</em></strong><br><%= @product.description %></li>
+      <li><strong><em>Description:</em></strong><br><%= simple_format(@product.description) %></li>
       <li><strong><em>Catégorie:</em></strong> <%= @category.name %></li>
     </ul>
   </div>

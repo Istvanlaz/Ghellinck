@@ -42,7 +42,6 @@
   align-items: center;
 
   text-align: center;
-
 }
 
 .categories_cont a {
@@ -56,15 +55,82 @@
 
   inline-size: min-content;
 
+  // &:hover {
+  //   font-size: 3.2em;
+  // }
 }
 
-.categories_cont a:hover{
-  transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0);
-    position: relative;
-    transition-duration: 0.3s;
-    transition-property: transform;
+
+
+// begin float shadow tryouts
+
+$defaultDuration: .3s;
+
+@mixin hideTapHighlightColor() {
+  //Prevent highlight colour when element is tapped
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+@mixin hardwareAccel() {
+  //Improve performance on mobile/tablet devices
+  transform: translateZ(0);
+}
+
+@mixin improveAntiAlias() {
+  //Improve aliasing on mobile/tablet devices
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+/* Float Shadow */
+.categories_cont a {
+  display: inline-block;
+  position: relative;
+  transition-duration: $defaultDuration;
+  transition-property: transform;
+
+  @include hideTapHighlightColor();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+
+  &:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 80%); /* W3C */
+    transition-duration: $defaultDuration;
+    transition-property: transform opacity;
+  }
+
+  &:hover {
+    transform: translateY(-5px); /* move the element up by 5px */
+
+    &:before {
+      opacity: 1;
+      transform: translateY(5px); /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+    }
+  }
+}
+
+
+
+// end float shadow tryouts
+
+
+
+
+// .categories_cont a:hover{
+//   transform: perspective(1px) translateZ(0);
+//     box-shadow: 0 0 3px rgba(0, 0, 0, 0);
+//     position: relative;
+//     transition-duration: 0.3s;
+//     transition-property: transform;
+// }
 
 .category_bg_img {
   position: absolute;
@@ -85,8 +151,31 @@
   width: 100vw;
 }
 
-.category_bg_img.current_slide {
+.current_slide {
   opacity: 1;
+  // transition: 0.45s ease-in-out;
+}
+
+@keyframes catImageAppear {
+  from{
+    opacity: 0;
+    // transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    // transform: translateX(0px);
+  }
+}
+
+@keyframes catImageFade {
+  from{
+    opacity: 1;
+    // transform: translateX(50px);
+  }
+  to{
+    opacity: 0;
+    // transform: translateX(0px);
+  }
 }
 
 @media screen and (max-width: 600px) {

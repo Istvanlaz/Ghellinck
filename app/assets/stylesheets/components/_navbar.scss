@@ -31,7 +31,7 @@
 
 .navbar-links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 
   height: 10vh;
@@ -39,7 +39,7 @@
 
   text-shadow: 1px 1px 1px $black35;
 
-  padding: 0 2vw;
+  padding: 0 6vw 0 2vw;
   letter-spacing: 2px;
   margin-bottom: 0px;
 }
@@ -59,6 +59,10 @@
 #logo {
   display: flex;
   align-items: center;
+
+  &:hover #logo_name{
+    border-bottom: 1px solid $bright;
+  }
 }
 
 #logo img {
@@ -71,18 +75,11 @@
 
 #logo_name {
   font-family: 'Charm', cursive;
-}
-
-#logo_name a {
   font-size: 1.10rem;
 
   padding: 0 4vw 1.5vh 0;
 
   border-bottom: 1px solid $goldWriting;
-
-  &:hover {
-    border-bottom: 1px solid $bright;
-  }
 }
 
 #empty_space {
@@ -168,7 +165,7 @@
 
     height: 100vh;
     width: 80vw;
-    padding: 3vh 1vw;
+    padding: 10vh 1vw;
 
     background-color: $darkBlue;
     transform: translateX(100vw);
@@ -177,6 +174,10 @@
 
   .navbar-links li {
     opacity: 0;
+  }
+
+  #logo_space {
+    display: none;
   }
 
   #logo {
@@ -209,6 +210,19 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 1px 1px 1px $black35;
+  }
+
+  .logo img {
+    object-fit: cover;
+
+    height: 5vh;
+    width: 5vh;
+    margin-right: 2vw;
+  }
+
+  .small_logo {
+    display: flex;
+    align-items: center;
   }
 
   .nav-active {
