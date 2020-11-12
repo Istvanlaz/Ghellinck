@@ -40,6 +40,8 @@
   color: $black;
 
   padding: 0 7vh;
+  background-color: #0c2432;
+  color: #FAEBD7;
 }
 
 .home_info_corner {
@@ -229,6 +231,7 @@
 
   .home_user_description {
     padding: 0 7vh 7vh 7vh;
+    line-height: 1.5;
   }
 
   .image_slider {
