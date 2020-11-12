@@ -21,7 +21,8 @@
   margin: 32vh auto;
   padding: 0px 10vw;
 
-  font-family: 'Calligraffitti', cursive;
+  font-family: 'Charm', cursive;
+
 }
 
 .category_imgs {
@@ -41,18 +42,28 @@
   align-items: center;
 
   text-align: center;
+
 }
 
 .categories_cont a {
   font-size: 3rem;
   font-weight: bold;
 
-  color: $bright;
+  color: #0c2432;
 
   text-decoration: none;
   text-shadow: 0px 4px 4px $black25;
 
   inline-size: min-content;
+
+}
+
+.categories_cont a:hover{
+  transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0);
+    position: relative;
+    transition-duration: 0.3s;
+    transition-property: transform;
 }
 
 .category_bg_img {
@@ -64,6 +75,7 @@
 
   height:  90vh;
   width: 100vw;
+  filter: blur(3px);
 }
 
 .category_bg_img img {
