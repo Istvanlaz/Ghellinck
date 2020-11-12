@@ -3,6 +3,8 @@
 .body_cont {
   position: relative;
   font-family: 'Roboto', sans-serif;
+  min-height: 90vh;
+  min-width: 100vw;
 }
 
 // Form Scss
@@ -33,14 +35,14 @@
   display: grid;
   grid-template-columns: 1.5fr 1.2fr;
 
-  height: 90vh;
+  height: fit-content;
   width: 100vw;
 
   background-color: $bright;
   color: $black;
 
   padding: 0 7vh;
-  background-color: #0c2432;
+  background-color: $darkBlue;
   color: #FAEBD7;
 }
 
@@ -88,6 +90,8 @@
   margin: 7.5vh auto;
 
   overflow: hidden;
+
+  border-radius: 5px;
 }
 
 .slides {

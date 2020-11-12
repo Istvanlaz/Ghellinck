@@ -22,6 +22,8 @@
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: false } %>
+      <div class="line_break"></div>
+      <h3 class="form_secondary_title">Info 'A Propos'.</h3>
       <%= f.input :description, as: :text,
                   placeholder: "#{User.last.description}",
                   required: true %>
@@ -34,6 +36,7 @@
                   required: true %>
       <%= f.input :home_image, as: :file,
                   required: true %>
+      <div class="line_break"></div>
     </div>
 
     <div class="form-actions admin_form_submit">
