@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   def max_user_count
     if User.count === 1
-      errors.add(:user, 'Reached limit of permitted users for this app.')
+      errors.add(:user, 'Nombre maximum utilisateurs atteint.')
       false
     end
   end

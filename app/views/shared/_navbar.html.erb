@@ -2,7 +2,7 @@
 
   <ul class="navbar-links">
     <li class="navbar-item" id="logo">
-      <%= image_tag("icons/Logo_Aymeric.png", alt: "/") %>
+      <a href="/"><%= image_tag("icons/Logo_Aymeric.png", alt: "/") %></a>
       <div id="logo_name">
         <%= link_to "Aymeric de Ghellinck d'Elseghem", root_path %>
       </div>
@@ -10,9 +10,9 @@
     <li class="navbar-item" id="empty_space">
 
     </li>
-    <li class="navbar-item">
+    <!--<li class="navbar-item">
       <%= link_to "Accueil", root_path %>
-    </li>
+    </li>-->
     <li class="navbar-item">
       <%= link_to "Réalisations", categories_path %>
     </li>
@@ -23,7 +23,7 @@
       <%= link_to "Contact", contact_path %>
     </li>
   </ul>
-  <div class="logo"><%= link_to "Ghellinck", root_path %></div>
+  <div class="logo"><%= link_to "A. de Ghellinck", root_path %></div>
   <div class="burger">
     <div class="line1"></div>
     <div class="line2"></div>
