@@ -56,6 +56,6 @@
     <div class="home_user_image">
       <%= cl_image_tag User.last.home_image.key %>
     </div>
-    <div class="home_user_description"><%= User.last.home_description %></div>
+    <div class="home_user_description"><%= simple_format(User.last.home_description) %></div>
   </div>
 </div>

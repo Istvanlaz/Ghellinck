@@ -17,7 +17,7 @@
   width: 100vw;
 
   background-color: $bright;
-  color: #0c2432;
+  color: $darkBlue;
 
   padding: 0 7vh;
 }
@@ -32,7 +32,7 @@
   height: 20%;
   width: 100%;
 
-  color: #0c2432;
+  color: $darkBlue;
 
   padding: 3vh 0;
   text-align: center;
@@ -61,6 +61,8 @@
 
   height: 75vh;
   width: 75vh;
+
+  border-radius: 5px;
 }
 
 .product_show_info {
@@ -70,7 +72,7 @@
   margin: auto;
 }
 .body_cont{
-  background-color:#FFFDF7;
+  background-color: $bright;
 }
 
 
